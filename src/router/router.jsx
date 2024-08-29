@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { About, Cart, Checkout, Error, HomeLayout, Login, Orders, Products, Register, SingleProducts } from "../pages";
+import { About, Cart, Checkout, Error, HomeLayout, Landing, Login, Orders, Products, Register, SingleProducts } from "../pages";
 
 const router = createBrowserRouter([
     {
@@ -8,7 +8,11 @@ const router = createBrowserRouter([
         errorElement: <Error></Error>,
         children: [
             {
-                path: 'products',
+                path: '/',
+                element: <Landing/>
+            },
+            {
+                path: '/products',
                 element: <Products></Products>, 
             },
             {

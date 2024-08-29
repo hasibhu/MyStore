@@ -1,7 +1,8 @@
 
 import Navbar from './Navbar';
 import { Outlet } from 'react-router-dom';
-import { Header } from '../components';
+import { Header} from '../components';
+
 
 
 const HomeLayout = () => {
