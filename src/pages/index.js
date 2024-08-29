@@ -10,4 +10,5 @@ export {default as Register} from './Register'
 export {default as Products} from './Products'
 export {default as SingleProducts} from './SingleProducts'
 export {default as Orders} from './Orders'
+export {default as NavLinks} from '../components/NavLinks'
 

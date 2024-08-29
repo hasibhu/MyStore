@@ -9,7 +9,6 @@ const HomeLayout = () => {
         <div>
             <Header></Header>
             <Navbar></Navbar>
-            <h2 className='text-center p-10'>We are at home page</h2>
             <Outlet></Outlet>
         </div>
     );
