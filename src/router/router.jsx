@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import { About, Cart, Checkout, Error, HomeLayout, Landing, Login, Orders, Products, Register, SingleProducts } from "../pages";
+import { About, Cart, Checkout, Error,  HomeLayout, Landing, Login, Orders, Products, Register, SingleProducts } from "../pages";
 import { ErrorElement } from '../components'
+import { customFetch } from "../utils";
+
 
 const router = createBrowserRouter([
     {
@@ -11,7 +13,8 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Landing />,
-                errorElement: <ErrorElement></ErrorElement>
+                errorElement: <ErrorElement></ErrorElement>,
+                
             },
             {
                 path: '/products',
@@ -21,6 +24,7 @@ const router = createBrowserRouter([
             {
                 path: 'products/:id',
                 element: <SingleProducts></SingleProducts>, 
+                loader: async ({ params }) => await customFetch(`/products/${params.id}`)
                 
             },
             {
