@@ -18,7 +18,7 @@ const Products = () => {
 
     return (
         <div>
-            <h2>All products will be here </h2>
+          
             <Filters></Filters>
             <ProductContainer></ProductContainer>
             <Pagination></Pagination>

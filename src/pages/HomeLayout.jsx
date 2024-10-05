@@ -7,7 +7,7 @@ import { Header} from '../components';
 
 const HomeLayout = () => {
     return (
-        <div>
+        <div className='lg:w-[1080px] mx-auto'>
             <Header></Header>
             <Navbar></Navbar>
             <Outlet></Outlet>
