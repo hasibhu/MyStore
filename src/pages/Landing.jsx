@@ -1,16 +1,15 @@
 
 import { FeaturedProducts, Hero } from '../components';
-// import { customFetch } from '../utils';
+import { customFetch } from '../utils';
 
-// const url =  '/products?featured=true'
+const url =  '/products?featured=true'
 
-//  const loader = async () => {
-//     const response = await customFetch(url);
-//     console.log(response);
-//     const products = response?.data;
-//     // console.log(products);
-//     return products;
-// }
+ export const loader = async () => {
+    const response = await customFetch(url);
+    const products = response?.data?.data;
+    // console.log(products);
+    return {products};
+}
 
 // const productsList = loader();
 

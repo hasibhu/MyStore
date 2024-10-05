@@ -4,6 +4,13 @@ import { ErrorElement } from '../components'
 import { customFetch } from "../utils";
 
 
+
+// loaders 
+import { loader as landingLoader } from "../pages/Landing";
+import {loader as productsLoader } from '../pages/Products'
+
+
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -11,15 +18,16 @@ const router = createBrowserRouter([
         errorElement: <Error></Error>,
         children: [
             {
-                path: '/',
+                index:true,
                 element: <Landing />,
                 errorElement: <ErrorElement></ErrorElement>,
-                
+                loader: landingLoader
             },
             {
                 path: '/products',
                 element: <Products></Products>, 
-                 errorElement: <ErrorElement></ErrorElement>
+                errorElement: <ErrorElement></ErrorElement>,
+                 loader: productsLoader
             },
             {
                 path: 'products/:id',

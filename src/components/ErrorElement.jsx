@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useRouteError } from 'react-router-dom';
 
 const ErrorElement = () => {
@@ -7,7 +7,7 @@ const ErrorElement = () => {
     console.log(error);
     return (
         <div >
-            <h4 className='text-4xl font-bold'> There was an error ......</h4>
+            <h4 className='text-4xl font-bold text-center'> There was an error ......</h4>
         </div>
     );
 };
