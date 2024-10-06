@@ -25,7 +25,7 @@ const Filters = () => {
 
             {/* price  */}
 
-            <FormRange></FormRange>
+            <FormRange ></FormRange>
 
             {/* Free shipping  */}
             <FormCheckbox label='Free Shipping' name='shipping' size='checkbox-sm'></FormCheckbox>
