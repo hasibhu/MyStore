@@ -8,6 +8,7 @@ import { BsFillGridFill, BsList } from 'react-icons/bs';
 const ProductContainer = () => {
    
     const { meta } = useLoaderData();
+    
     const totalProducts = meta.pagination.total;
     console.log(totalProducts);
     const [layout, setLayout] = useState('grid');
@@ -50,7 +51,7 @@ const ProductContainer = () => {
             {/* PRODUCTS */}
             <div>
                 {totalProducts === 0 ? (
-                <h5 className='text-2xl mt-16'>
+                <h5 className='text-4xl mt-16 text-center  font-bold'>
                     Sorry, no products matched your search...
                 </h5>
                 ) : layout === 'grid' ? (
