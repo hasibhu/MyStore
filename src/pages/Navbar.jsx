@@ -28,10 +28,10 @@ const Navbar = () => {
     }, [theme]);
 
 
-    const numItemsInCart = useSelector((state)=> state.cartState.numItemsInCart)
-    console.log(numItemsInCart);
-
+    const numItemsInCart = useSelector((state) => state.cartState.numItemsInCart);
     
+
+
     return (
         <nav className='bg-base-200'>
             <div className='navbar align-element'>
