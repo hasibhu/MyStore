@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { generateAmountOptions } from "../utils/generateAmountOptions";
+import { useDispatch } from "react-redux";
+import { addItem } from "../redux/cart/cartSlice";
 
 
 
 const Singleproducts = () => {
-    const data = useLoaderData()
+    const data = useLoaderData();
+   
+    const product = data?.data?.data;
+    const { title, image, price, description, colors, company } = product?.attributes
+    console.log(company);
     const [productColor, setProductColor] = useState(data?.data?.data?.attributes?.colors[0]);
     // console.log(data?.data?.data?.attributes);
 
@@ -15,7 +21,22 @@ const Singleproducts = () => {
         setAmount(parseInt(e.target.value));
     };
 
-    
+    const cartProduct = {
+        cartID: product.id + productColor,
+        productID: product.id,
+        image: image,
+        title, 
+        price,
+        productColor,
+        company,
+        amount
+    }
+
+    const dispatch = useDispatch();
+
+    const addTocart = () => {
+        dispatch(addItem({product: cartProduct}))
+    }
 
     return (
         <section>
@@ -36,11 +57,14 @@ const Singleproducts = () => {
 
         
                 <h1 className='capitalize text-3xl font-bold'>{data?.data?.data?.attributes?.title}</h1>
+
                 <h4 className='text-xl text-neutral-content font-bold mt-2'>
                     {data?.data?.data?.attributes?.company}
                 </h4>
+
                 <p className='mt-3 text-xl'>{data?.data?.data?.attributes?.dollarsAmount}</p>
                 <p className='mt-6 leading-8'>{data?.data?.data?.attributes?.description}</p>
+
                 {/* COLORS */}
                 <div className='mt-6'>
                     <h4 className='text-md font-medium tracking-wider capitalize'>
@@ -64,33 +88,33 @@ const Singleproducts = () => {
 
 
                     {/* AMOUNT */}
-                <div className='form-control w-full max-w-xs'>
-                    <label className='label' htmlFor='amount'>
-                    <h4 className='text-md font-medium -tracking-wider capitalize'>
-                        amount
-                    </h4>
-                    </label>
-                    <select
-                        className='select select-secondary select-bordered select-md'
-                        id='amount'
-                        value={amount}
-                        onChange={handleAmount}
-                        >
-                            {generateAmountOptions(20)}
-                            {/* <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option> */}
-                    </select>
-                </div>
+                    <div className='form-control w-full max-w-xs'>
+                        <label className='label' htmlFor='amount'>
+                        <h4 className='text-md font-medium -tracking-wider capitalize'>
+                            amount
+                        </h4>
+                        </label>
+                        <select
+                            className='select select-secondary select-bordered select-md'
+                            id='amount'
+                            value={amount}
+                            onChange={handleAmount}
+                            >
+                                {generateAmountOptions(20)}
+                                {/* <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option> */}
+                        </select>
+                    </div>
 
                     {/* cart button  */}
-                <div className="mt-6">
-                        <button className="btn btn-secondary btn-md"
-                        onClick={()=> console.log("add to bag")}
-                        >
-                         Add to Bag   
-                    </button>
-                </div>
+                    <div className="mt-6">
+                            <button className="btn btn-secondary btn-md"
+                            onClick={addTocart}
+                            >
+                            Add to Bag   
+                        </button>
+                    </div>
 
                 </div>
             </div>
