@@ -10,8 +10,8 @@ const Singleproducts = () => {
     const data = useLoaderData();
    
     const product = data?.data?.data;
-    const { title, image, price, description, colors, company } = product?.attributes
-    console.log(company);
+    const { title, image, price, description, colors, company } = product?.attributes;
+    
     const [productColor, setProductColor] = useState(data?.data?.data?.attributes?.colors[0]);
     // console.log(data?.data?.data?.attributes);
 

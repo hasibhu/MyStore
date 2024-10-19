@@ -1,9 +1,13 @@
 import React from 'react';
+import { CartItemsList, CartTotals, SectionTitle } from '../components';
 
 const Cart = () => {
     return (
-        <div>
-            Cart Is here ...
+        <div className='flex justify-center items-center mt-10 '>
+            <SectionTitle SectionTitle={Cart }></SectionTitle>
+
+            <CartItemsList></CartItemsList>
+            <CartTotals></CartTotals>
         </div>
     );
 };

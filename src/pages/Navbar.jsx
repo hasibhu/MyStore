@@ -20,6 +20,7 @@ const Navbar = () => {
         const newTheme = theme === themes.winter ? themes.dracula : themes.winter;
         setTheme(newTheme);
     };
+    
 
     useEffect(() => {
         // Apply the selected theme
