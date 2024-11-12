@@ -52,6 +52,7 @@ const Navbar = () => {
                     </ul>
                 </div>
 
+                {/* large screen menu  */}
                 <div className='navbar-center hidden lg:flex'>
                     <ul className='menu menu-horizontal font-bold'>
                         <NavLinks />

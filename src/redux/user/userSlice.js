@@ -15,8 +15,9 @@ const userSlice = createSlice({
         loginUser: (state, action) => {
             console.log('login');
         },
-        logoutUser: (state, action) => {
-            console.log('logout');
+        logoutUser: (state ) => {
+            state.user = null;
+            localStorage.removeItem('user')
         },
         toggleTheme: (state) => {
             console.log('toggle theme ');
