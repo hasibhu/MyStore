@@ -8,6 +8,7 @@ import { customFetch } from "../utils";
 // loaders 
 import { loader as landingLoader } from "../pages/Landing";
 import {loader as productsLoader } from '../pages/Products'
+import {action as registerAction } from '../pages/Register'
 
 
 
@@ -65,6 +66,7 @@ const router = createBrowserRouter([
         path: '/register',
         element: <Register></Register>,
         errorElement: <Error></Error>,
+        action: registerAction,
         
     }
 ])

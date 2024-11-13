@@ -11,4 +11,5 @@ export {default as Products} from './Products'
 export {default as SingleProducts} from './SingleProduct'
 export {default as Orders} from './Orders'
 export {default as NavLinks} from '../components/NavLinks'
+// export {default as Orders} from './Orders'
 
